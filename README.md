@@ -1,4 +1,5 @@
 # GeoMapProjesi
+﻿# GeoMapProjesi
 
 GeoMapProjesi, .NET 8 WPF tabanli cografi analiz uygulamasidir. Harita, mekansal veri, hava durumu ve AI destekli cikarim bilesenlerini birlestirir.
 

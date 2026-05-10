@@ -1,0 +1,29 @@
+﻿<Window x:Class="GeoMapProjesi.HistoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Analiz Geçmişi" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="📋 GEÇMİŞ ANALİZ KAYITLARI" FontSize="20" FontWeight="Bold" Foreground="#333" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+
+        <DataGrid x:Name="GridGecmis" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" 
+                  AlternatingRowBackground="#F0F0F0" GridLinesVisibility="Horizontal" HeadersVisibility="Column">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Tarih" Binding="{Binding Tarih}" Width="120"/>
+                <DataGridTextColumn Header="Konum" Binding="{Binding KonumAdi}" Width="*"/>
+                <DataGridTextColumn Header="🌲 Orman %" Binding="{Binding Orman, StringFormat=N2}" Width="80" FontWeight="Bold" Foreground="Green"/>
+                <DataGridTextColumn Header="💧 Su %" Binding="{Binding Su, StringFormat=N2}" Width="80" Foreground="Blue"/>
+                <DataGridTextColumn Header="🏙️ Şehir %" Binding="{Binding Sehir, StringFormat=N2}" Width="80" Foreground="Gray"/>
+                <DataGridTextColumn Header="🌾 Tarım %" Binding="{Binding Tarim, StringFormat=N2}" Width="80" Foreground="Orange"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Content="Kapat" Grid.Row="2" Width="100" Height="30" Margin="0,10,0,0" Click="Button_Click"/>
+    </Grid>
+</Window>
